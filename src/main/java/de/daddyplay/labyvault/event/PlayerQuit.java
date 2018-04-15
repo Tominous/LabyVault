@@ -7,8 +7,6 @@ import net.labymod.utils.ServerData;
 public class PlayerQuit implements Consumer<ServerData> {
     @Override
     public void accept(ServerData serverData) {
-        if(Main.vaultMoney.isShown()){
             Main.money = 0;
-        }
     }
 }

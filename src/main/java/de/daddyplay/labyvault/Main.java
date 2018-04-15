@@ -1,7 +1,6 @@
 package de.daddyplay.labyvault;
 
-import de.daddyplay.labyvault.event.MoneyMessageEvent;
-import de.daddyplay.labyvault.event.PlayerJoin;
+import de.daddyplay.labyvault.event.MessageEvent;;
 import de.daddyplay.labyvault.event.PlayerQuit;
 import de.daddyplay.labyvault.module.VaultMoney;
 import de.daddyplay.labyvault.module.VaultmoneyModule;
@@ -20,9 +19,8 @@ public class Main extends LabyModAddon {
     public void onEnable() {
         main = this;
         vaultMoney = new VaultmoneyModule();
-        this.getApi().getEventManager().registerOnJoin(new PlayerJoin());
         this.getApi().getEventManager().registerOnQuit(new PlayerQuit());
-        this.getApi().getEventManager().register(new MoneyMessageEvent());
+        this.getApi().getEventManager().register(new MessageEvent());
         this.getApi().registerModule(vaultMoney);
         ModuleCategoryRegistry.loadCategory(new VaultMoney());
     }
