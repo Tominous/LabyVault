@@ -2,29 +2,35 @@ package de.daddyplay.labyvault.module;
 
 import de.daddyplay.labyvault.Main;
 import net.labymod.ingamegui.ModuleCategory;
-import net.labymod.ingamegui.moduletypes.SimpleModule;
+import net.labymod.ingamegui.moduletypes.SimpleTextModule;
 import net.labymod.settings.elements.ControlElement;
 import net.labymod.utils.Material;
 
-public class VaultmoneyModule extends SimpleModule {
+public class JobModule extends SimpleTextModule {
+
     @Override
-    public String getDisplayName() {
-        return "Money";
+    public String[] getValues() {
+        return Main.userData.getLevel();
     }
 
     @Override
-    public String getDisplayValue() {
-        return "" + Main.userData.getMoney();
+    public String[] getDefaultValues() {
+        return new String[0];
     }
 
     @Override
-    public String getDefaultValue() {
-        return null;
+    public String[] getKeys() {
+        return Main.userData.getJobs();
+    }
+
+    @Override
+    public String[] getDefaultKeys() {
+        return new String[0];
     }
 
     @Override
     public ControlElement.IconData getIconData() {
-        return new ControlElement.IconData(Material.EMERALD);
+        return new ControlElement.IconData(Material.IRON_PICKAXE);
     }
 
     @Override
@@ -34,12 +40,12 @@ public class VaultmoneyModule extends SimpleModule {
 
     @Override
     public String getSettingName() {
-        return "Money";
+        return "Jobs";
     }
 
     @Override
     public String getDescription() {
-        return "";
+        return "Jobs Display";
     }
 
     @Override
@@ -50,5 +56,10 @@ public class VaultmoneyModule extends SimpleModule {
     @Override
     public ModuleCategory getCategory() {
         return new LabyVaultModuleCategory();
+    }
+
+    @Override
+    public String getName() {
+        return "Jobs";
     }
 }
