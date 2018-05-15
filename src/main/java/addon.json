@@ -3,7 +3,7 @@
   "name": "LabyVault",
   "mainClass": "de.daddyplay.labyvault.Main",
   "description": "LabyVault zeigt dir daten ueber dich an z.B Kontostand, Rank, usw..",
-  "version": 1,
+  "version": 2,
   "author": "daddyplay",
   "category": 2,
   "icon": "http://dl.daddyplay.de/labyvault/icon.png"
